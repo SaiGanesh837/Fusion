@@ -12,5 +12,6 @@ urlpatterns = [
     path('verify/',views.verify,name='verify'),
     path('publish/',views.publish,name='publish'),
     path('notReady_publish/',views.notReady_publish,name='notReady_publish'),
+   url(r'^api/', include('applications.examination.api.urls')) 
  
 ]
