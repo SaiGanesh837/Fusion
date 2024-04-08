@@ -87,7 +87,10 @@ MESS_OPTION = (
     ('mess2', 'Non_veg_mess')
 )
 
-
+class Studentone(models.Model):
+    # Fields for the student
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
 class Messinfo(models.Model):
     student_id = models.ForeignKey(Student, on_delete=models.CASCADE)
     mess_option = models.CharField(max_length=20, choices=MESS_OPTION,

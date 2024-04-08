@@ -3,10 +3,10 @@ from django.contrib import admin
 from .models import (Feedback, Menu, Menu_change_request, Mess_meeting,
                      Mess_minutes, Mess_reg, Messinfo, Monthly_bill,
                      Nonveg_data, Nonveg_menu, Payments, Rebate,
-                     Special_request, Vacation_food,MessBillBase)
+                     Special_request, Vacation_food,MessBillBase,Studentone)
 
 # Register your models here.
-
+admin.site.register(Studentone)
 
 class MessinfoAdmin(admin.ModelAdmin):
     model = Messinfo

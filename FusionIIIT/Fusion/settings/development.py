@@ -6,6 +6,7 @@ SECRET_KEY = '=&w9due426k@l^ju1=s1)fj1rnpf0ok8xvjwx+62_nc-f12-8('
 
 ALLOWED_HOSTS = ['*']
 
+
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -15,6 +16,7 @@ DATABASES = {
         'PASSWORD': 'hello123',
     }
 }
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
