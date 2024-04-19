@@ -9,6 +9,11 @@ urlpatterns = [
 
 
     url(r'^update_hidden_grade/', views.update_hidden_grade, name='update_hidden_grade'),
+    
+    url(r'^update_hidden_grade_multiple/', views.update_hidden_grade_multiple, name='update_hidden_grade_multiple'),
+    
+    url(r'^enter_student_grades/', views.enter_student_grades, name='enter_student_grades'),
+    
 
     url(r'^add_courses/' , views.add_courses , name = 'add_courses'),
 
