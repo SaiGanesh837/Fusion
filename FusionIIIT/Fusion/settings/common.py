@@ -104,7 +104,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.humanize',
-    
+    'django_crontab',
     'corsheaders',
 
     'applications.eis',
@@ -164,6 +164,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'Fusion.middleware.custom_middleware.user_logged_in_middleware',
 ]
 
 ROOT_URLCONF = 'Fusion.urls'
@@ -179,6 +180,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Fusion.context_processors.global_vars',
             ],
         },
     },
@@ -276,6 +278,7 @@ CRISPY_TEMPLATE_PACK = 'semantic-ui'
 CRISPY_ALLOWED_TEMPLATE_PACKS = ('semantic-ui')
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 YOUTUBE_DATA_API_KEY = 'api_key'
+
 
 
 CORS_ORIGIN_ALLOW_ALL = True

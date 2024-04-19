@@ -88,6 +88,7 @@
                     </a>
                 {% endif %}
 
+<<<<<<< HEAD
                 {% if request.user.extrainfo.user_type == 'faculty' %}
                     {% for desig in designat %}
                         {% if 'hradmin' == desig.designation.name %}
@@ -100,16 +101,111 @@
                 {% endif %}
             </div>
             {% comment %}The Tab-Menu ends here!{% endcomment %}
+=======
+            <a class="item" href="{% url 'globals:profile' %}">
+                View Professional Profile 
+                <i class="right floated chevron right icon"></i>
+            </a>
+            {% if "dean_rspc" in designation %}
+            <a class="item" href = "../office/officeOfDeanRSPC">
+               Project Requests
+               <i class="right floated chevron right icon"></i>
+           </a>
+            {% endif %}
+       {% if "dean_rspc" in designation %}
+            <a class="item" href = "../eis/rspc_profile">
+               RSPC Profile
+               <i class="right floated chevron right icon"></i>
+           </a>
+       {% endif %}
+>>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
 
         </div>
         {% comment %} The left-rail segment ends here! {% endcomment %}
 
+<<<<<<< HEAD
         {% comment %} The central-rail segment starts here! {% endcomment %}
         <div class="menus-container">
             <div class="ui top attached tabular large menu">
                 <a class="active item" data-tab="first">Notifications</a>
                 <a class="item" data-tab="second">News</a>
                 <a class="item" data-tab="third">Announcements</a>
+=======
+
+        {% if 'student' == request.user.extrainfo.user_type %}
+
+        {% comment %}The Tab-Menu starts here!{% endcomment %}
+        <div class="ui huge fluid vertical pointing menu" style="max-width: 320px;">
+            <a class="item
+            " href="/hr2/administrativeProfile">
+                View Administrative Profile
+                <i class="right floated chevron right icon"></i>
+            </a>
+        </div>
+        {% comment %}The Tab-Menu ends here!{% endcomment %}
+
+        {% endif %}
+
+        {% comment %}The Tab-Menu starts here!{% endcomment %}
+
+        
+        {% if request.user.extrainfo.user_type == 'faculty' %}
+        {%for desig in designat%}
+        {% if 'hradmin' == desig.designation.name %}
+
+        <div class="ui huge fluid vertical pointing menu" style="max-width: 320px;">
+
+            <a class="item" href="{% url 'hr2:hradmin' %}">
+                Hr-Admin
+                <i class="right floated chevron right icon"></i>
+            </a>
+
+        </div>
+        {% endif %}
+        {%endfor %}
+        {% endif %}
+        {% comment %}The Tab-Menu ends here!{% endcomment %}
+
+
+
+
+
+
+
+
+    </div>
+    {% comment %}
+    The left-rail segment ends here!
+    {% endcomment %}
+
+
+
+    {% comment %}
+    The central-rail segment starts here!
+    {% endcomment %}
+
+    <div class="eight wide column">
+        <div class="ui top attached tabular large menu">
+            <a class="active item" data-tab="first">Notifications</a>
+            <a class="item" data-tab="second">News</a>
+            <a class="item" data-tab="third">Announcements</a>
+        </div>
+        <div class="ui bottom attached active tab segment" data-tab="first">
+            <div id="textSegmentDiv">
+
+                {% comment %}
+                TODO: Loader required?
+                <div class="ui active large text loader" id="loader">
+                    Loading ...
+                </div>
+                {% endcomment %}
+
+                <div id="textLoader" style="max-height: 75vh; overflow-y: auto; overflow-x: hidden;">
+                    {% block alerts %}
+                    {% include 'dashboard/alerts.html' %}
+                    {% endblock %}
+                </div>
+>>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
             </div>
 
             <div class="ui bottom attached active tab segment" data-tab="first">

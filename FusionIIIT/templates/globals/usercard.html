@@ -16,13 +16,29 @@
                 TODO: Add a If-Else here!
             {% endcomment %}
             {% if user %}
+<<<<<<< HEAD
                 <div style="display:flex;flex-wrap:wrap;justify-content:space-between;" class="ui large header">
                     <div style="padding: 0.25rem;">
+=======
+
+
+                <div style="display:flex;justify-content:space-between;flex-direction: column;" class="ui large header">
+                    <div style="padding: 0.25rem; word-wrap: break-word;">
+
+>>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
                         {{ user.first_name }}
                         {{ user.last_name }}
                     </div>
                 
+<<<<<<< HEAD
                     <div class="meta" style="padding: 0.25rem;">
+=======
+
+
+                    <div class="meta" style="padding: 0.25rem;word-wrap: break-word;">
+
+
+>>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
                         {{ user.extrainfo.department.name }}
                     </div>
                 </div>
@@ -31,6 +47,7 @@
                     {% if user.extrainfo.user_type == 'student' %}
                         {{ user.extrainfo.student.programme }}
                         {{ user.extrainfo.student.batch }}
+<<<<<<< HEAD
                         <br/>
                         Sem - {{ user.extrainfo.student.curr_semester_no }}
                     {% endif %}
@@ -52,6 +69,29 @@
                         {{ request.user.extrainfo.student.programme }}
                         {{ request.user.extrainfo.student.batch }}
                         <br/>
+=======
+                        <br/>
+                        Sem - {{ user.extrainfo.student.curr_semester_no }}
+                    {% endif %}
+                </div>
+            {% else %}
+                <div style="display:flex;flex-wrap:wrap;justify-content:space-between;" class="ui large header">
+                    <div>
+                        {{ request.user.first_name }}
+                        {{ request.user.last_name }}
+                    </div>
+                    
+                    <div class="meta">
+                        {{ request.user.extrainfo.department.name }}
+                    </div>
+                </div>
+                
+                <div class="ui large header">
+                    {% if user.extrainfo.user_type == 'student' %}
+                        {{ request.user.extrainfo.student.programme }}
+                        {{ request.user.extrainfo.student.batch }}
+                        <br/>
+>>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
                         Sem - {{ request.user.extrainfo.student.curr_semester_no }}
                     {% endif %}
                 </div>
@@ -60,6 +100,7 @@
                     {{ user.extrainfo.student.programme }}
                     {{ user.extrainfo.student.batch }}
                     {{ user.extrainfo.student.curr_semester_no }}
+<<<<<<< HEAD
                 </span>
             {% endif %}
             <div class="ui large header">
@@ -74,8 +115,22 @@
                     </span>
                     <br>
                 {% endfor %}
+=======
+                </span>
+            {% endif %}
+            <br/>
+            <div class="meta">
+               
+                <span> 
+                    {{global_var|capfirst}}
+                </span>
+>>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
             </div>
         </div>
     </div>
     {% comment %} The Employee Image Card ends here! {% endcomment %}
+<<<<<<< HEAD
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
