@@ -12,18 +12,17 @@
         <a class="item" id="billm">
             Bill
         </a>
-        
-
+<!--
         <a class="item" id="ph">
             Payment History
         </a>
-        
-        {% comment %} <a class="item" id="regm">
+        -->
+        <a class="item" id="regm">
             Register for Mess
-        </a> {% endcomment %}
+        </a>
     </div>
 
-    <div class="ui active tab  " id="menu1tab">
+    <div class="ui active tab" id="menu1tab">
         <div class="ui vertical segment">
             <table class="ui definition table" style="padding: 8px; padding-left: 8px; padding-right: 8px;">
                 <thead>
@@ -41,23 +40,28 @@
                     
                     <td>Monday</td>
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'MB' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
-                    {% comment %} <h2>Total Due Amount : {{total_due}}</h2> {% endcomment %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'ML' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'MD' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
                 </tr>
@@ -66,22 +70,28 @@
                     
                     <td>Tuesday</td>
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'TB' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'TL' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'TD' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
 
@@ -91,22 +101,28 @@
                     
                     <td>Wednesday</td>
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'WB' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'WL' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'WD' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </tr>
 
@@ -114,22 +130,28 @@
                     
                     <td>Thursday</td>
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'THB' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'THL' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'THD' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </tr>
 
@@ -138,22 +160,28 @@
 
                     <td>Friday</td>
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'FB' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'FL' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'FD' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
                 </tr>
@@ -161,22 +189,28 @@
                 <tr>
                     <td>Saturday</td>
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'SB' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'SL' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'SD' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
                 </tr>
@@ -185,22 +219,28 @@
                     
                     <td>Sunday</td>
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'SUB' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'SUL' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
-                    {% for item in reg_menu %}
+                    {% for item in menu %}
+                        {% if item.mess_option == messinfo.mess_option %}
                             {% if item.meal_time == 'SUD' %}
                                 <td>{{item.dish}}</td>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
 
                 </tr>
@@ -214,7 +254,7 @@
             <div class="ui divider"></div>
             <div class="extra content">
                 <!-- TODO add code to direct to a function which renders the template as a pdf file -->
-                <form method="post" target="_blank" action="{% url 'mess:MenuPDF1' %}">
+                <form method="post" target="_blank" action="{% url 'mess:MenuPDF' %}">
                     {% csrf_token %}
                 <button type="submit" class="ui primary button right floated">
                     <!-- Download -->
@@ -234,10 +274,11 @@
                 <thead>
                 <tr>
                     <th>Month</th>
-                    <th>Monthly Amount</th>
+                    <th>Monthly bill</th>
                     <th>Rebate Count</th>
-                    <th>Rebate Amount</th>
-                    <th>Total Bill </th>
+                    <th>Rebate Amt</th>
+                    <th>NonVeg Amt</th>
+                    <th>Total</th>
                 </tr></thead>
                 <tbody>
                 {% for stu in monthly_bill %}
@@ -246,46 +287,17 @@
                     <td>{{stu.amount}}</td>
                     <td>{{stu.rebate_count}}</td>
                     <td>{{stu.rebate_amount}}</td>
+                    <td>{{stu.nonveg_total_bill}}</td>
                     <td>{{stu.total_bill}}</td>
-                    {% comment %} <td>
-                        {% if stu.paid %}
-                            <i class="large green checkmark icon"></i>
-                        {% else %}
-                         <i class="large red x icon"></i>
-                        {% endif %}
-                    </td> {% endcomment %}
-                     {% comment %} <td>
-                        {% if stu.paid %}
-                            0
-                        {% else  %}
-                            {{stu.due_amount}}
-                        {% endif %}
-                    </td> {% endcomment %}
-
                 </tr>
                 {% endfor %}
                 </tbody>
             </table>
 
-
-            <h2>Total Remaining Balance : {{curr_balance}}</h2>
-            <h2>Current Mess Status: {{curr_status}}</h2>
             <br>
             <br>
 
             <div class="ui divider"></div>
-            
-            <div class="extra content">
-                <!-- TODO add code to direct to a function which renders the template as a pdf file -->
-                <form method="post" target="_blank" action="{% url 'mess:BillPDFStudent' %}">
-                    {% csrf_token %}
-                <button type="submit" class="ui primary button right floated">
-                    <!-- Download -->
-                    <i class="ui download icon right floated"></i>
-                </button>
-                </form>
-                <br>
-            </div>
 
         </div>
     </div>
@@ -294,23 +306,33 @@
         <table class="ui very basic collapsing celled table sortable" style="margin: auto;">
             <thead>
                 <tr>
-                    <th>Payment Date</th>
+                    <th>Student</th>
+                    <th>Sem</th>
                     <th>Amount</th>
-                    <th>Month</th>
-                    <th>Year</th>
+                    <th>Status</th>
                 </tr>
             </thead>
+
             <tbody>
-                {% for student in payments %}
+                {% for pay in payments %}
                 <tr>
-                    <td>{{student.payment_date}}</td>
-                    <td>{{student.amount_paid}}</td>
-                    <td>{{student.payment_month}}</td>
-                    <td>{{student.payment_year}}</td>
+                    <td>
+                        <h4 class="ui image header">
+                            <img src="{% static 'globals/img/zlatan.jpg' %}" class="ui mini circular image">
+                            <div class="content">
+                                {{pay.student_id}}
+                            </div>
+                        </h4>
+                    </td>
+
+                    <td>{{pay.sem}}</td>
+
+                    <td>{{pay.amount_paid}}</td>
+
+                    <td><i class="ui large green checkmark icon"></i></td>
                 </tr>
                 {% endfor %}
             </tbody>
-
         </table>
 
         <br>
@@ -432,7 +454,7 @@
 </script>
 
  <script>
-  {% comment %} function download(){
+  function download(){
             $.ajax({
                 type: 'POST',
                 url: 'menudownload/',
@@ -446,7 +468,7 @@
                 }
             });
         return false;
-    } {% endcomment %}
+    }
 
 </script>
 {% endblock %}

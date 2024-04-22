@@ -1,4 +1,3 @@
-from audioop import reverse
 import json
 
 from django.contrib.auth import logout
@@ -772,8 +771,6 @@ def   profile(request, username=None):
         username: Username of the user. If None,
             displays the profile of currently logged-in user
     """
-
-    print(username)
     user = get_object_or_404(User, Q(username=username)) if username else request.user
 
     editable = request.user == user

@@ -20,7 +20,7 @@ class authentication(models.Model):
     authenticator_2 = models.BooleanField(default=False)
     authenticator_3 = models.BooleanField(default=False)
     year = models.DateField(auto_now_add=True)
-    course_id = models.ForeignKey(Course, on_delete=models.CASCADE, default=1)
+    course_id = models.ForeignKey(Course, on_delete=models.CASCADE)
     course_year = models.IntegerField(default=2024)
 
     @property

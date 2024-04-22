@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from requests import Response
 from notifications.signals import notify
+
 # Create your views here.
 
 
@@ -76,7 +76,6 @@ def central_mess_notif(sender, recipient, type, message=None):
     sender = sender
     recipient = recipient
     verb = ''
-
     if type == 'feedback_submitted':
         verb = 'Your feedback has been successfully submitted.'
     elif type == 'menu_change_accepted':
@@ -136,7 +135,6 @@ def healthcare_center_notif(sender, recipient, type):
     if type == 'amb_req':
         verb = "You have a new ambulance request"
 
-<<<<<<< HEAD
     notify.send(sender=sender, recipient=recipient,
                 url=url, module=module, verb=verb)
 
@@ -144,14 +142,6 @@ def healthcare_center_notif(sender, recipient, type):
 def file_tracking_notif(sender, recipient, title):
     url = 'filetracking:inward'
     module = 'File Tracking'
-=======
-    notify.send(sender=sender, recipient=recipient, url=url, module=module, verb=verb)
-
-
-def file_tracking_notif(sender, recipient,title):
-    url='filetracking:inward'
-    module='File Tracking'
->>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
     sender = sender
     recipient = recipient
     verb = title
@@ -169,8 +159,6 @@ def scholarship_portal_notif(sender, recipient, type):
 
     if type.startswith('award'):
         s = type.split('_')
-        # print("psss")
-        # print(type, s)
         verb = "Invitation to apply for " + s[1]
     elif type == 'Accept_MCM':
         verb = "Your Mcm form has been accepted "
@@ -372,8 +360,6 @@ def department_notif(sender, recipient, type):
     recipient = recipient
     verb = type
     flag = "announcement"
-<<<<<<< HEAD
-=======
 
     notify.send(sender=sender,
                 recipient=recipient,
@@ -381,37 +367,6 @@ def department_notif(sender, recipient, type):
                 module=module,
                 verb=verb,
                 flag=flag)
-def examination_notif(sender, recipient, type):
-    url='examination:examination'
-    module='examination'
-    sender = sender
-    recipient = recipient
-    verb = type
-    flag = "announcement"
->>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
-
-    notify.send(sender=sender,
-                recipient=recipient,
-                url=url,
-                module=module,
-                verb=verb,
-                flag=flag)
-def examination_notif(sender, recipient, type,request):
-    url='examination:examination'
-    module='examination'
-    sender = sender
-    recipient = recipient
-    verb = type
-    flag = "examination"
-
-    notify.send(sender=sender,
-                recipient=recipient,
-                url=url,
-                module=module,
-                verb=verb,
-                flag=flag)
-    print("test3")
-    # return render(request, 'examination/announcement_req.html')
 
 def examination_notif(sender, recipient, type):
     url = 'examination:updateGrades'
@@ -464,10 +419,5 @@ def research_procedures_notif(sender, recipient, type):
     elif type == "created":
         verb = "A new Patent has been Created"
 
-<<<<<<< HEAD
     notify.send(sender=sender, recipient=recipient,
                 url=url, module=module, verb=verb)
-=======
-    notify.send(sender=sender,recipient=recipient,url=url,module=module,verb=verb)
-
->>>>>>> ebee7191d0ecc93448bbd27ff096c9c36fce5936
